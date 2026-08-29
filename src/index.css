@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+:root {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 0.9375rem; /* 15px default base */
+  line-height: 1.5;
+}
+
 /* Live In-Place App Editing Mode Styles */
 .app-edit-mode-active [contenteditable="true"],
 .app-edit-mode-active p,
@@ -35,3 +46,4 @@
   background-color: rgba(37, 99, 235, 0.05) !important;
   border-radius: 4px;
 }
+

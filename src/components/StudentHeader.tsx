@@ -72,12 +72,12 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
 
           <div className="text-left">
             <div className="flex items-center gap-1">
-              <h1 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+              <h1 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
                 {student.name.split(' ')[0]} {student.name.split(' ')[1] || ''}
               </h1>
-              <ChevronDown className="w-3 h-3 text-slate-400 group-hover:text-slate-700" />
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-700" />
             </div>
-            <p className="text-[10px] text-slate-500 font-mono">
+            <p className="text-xs text-slate-500 font-mono mt-0.5">
               RA: {student.ra}
             </p>
           </div>
@@ -104,26 +104,26 @@ export const StudentHeader: React.FC<StudentHeaderProps> = ({
 
             {/* Notifications Dropdown */}
             {showNotifications && (
-              <div className="absolute right-0 mt-2 w-72 sm:w-80 bg-white border border-slate-100 rounded-2xl shadow-xl p-3 z-50 animate-in fade-in slide-in-from-top-2">
+              <div className="absolute right-0 mt-2 w-72 sm:w-80 bg-white border border-slate-100 rounded-2xl shadow-xl p-3.5 z-50 animate-in fade-in slide-in-from-top-2">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                  <h3 className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                    <Bell className="w-3.5 h-3.5 text-blue-600" />
+                  <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                    <Bell className="w-4 h-4 text-blue-600" />
                     Avisos Acadêmicos
                   </h3>
-                  <span className="text-[10px] text-slate-500 font-mono">UNITECH</span>
+                  <span className="text-xs text-slate-500 font-mono font-bold">UNITECH</span>
                 </div>
 
-                <div className="space-y-2 mt-2 max-h-64 overflow-y-auto">
+                <div className="space-y-2 mt-2.5 max-h-64 overflow-y-auto">
                   {notifications.map((n) => (
                     <div
                       key={n.id}
-                      className="p-2.5 bg-slate-50 hover:bg-slate-100/70 rounded-xl border border-slate-100 text-left text-xs space-y-0.5 transition-colors"
+                      className="p-3 bg-slate-50 hover:bg-slate-100/70 rounded-xl border border-slate-100 text-left space-y-1 transition-colors"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-slate-900 text-[11px]">{n.title}</span>
-                        <span className="text-[9px] text-slate-400">{n.time}</span>
+                        <span className="font-bold text-slate-900 text-xs sm:text-sm">{n.title}</span>
+                        <span className="text-[11px] text-slate-400">{n.time}</span>
                       </div>
-                      <p className="text-[10px] text-slate-600">{n.desc}</p>
+                      <p className="text-xs text-slate-600 leading-relaxed">{n.desc}</p>
                     </div>
                   ))}
                 </div>

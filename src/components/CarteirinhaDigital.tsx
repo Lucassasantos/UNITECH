@@ -63,7 +63,7 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
   };
 
   const cardContent = (
-    <div className={`w-full max-w-sm mx-auto flex flex-col items-center transition-all ${highBrightness ? 'brightness-125 contrast-105' : ''}`}>
+    <div className={`w-full max-w-lg mx-auto flex flex-col items-center transition-all ${highBrightness ? 'brightness-125 contrast-105' : ''}`}>
       {/* Top action controls bar */}
       <div className="w-full flex items-center justify-between px-2 mb-3">
         <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-full">
@@ -118,14 +118,14 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
             {/* Header / University Banner */}
             <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 p-4 border-b border-white/10 flex items-center justify-between relative z-10">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 text-slate-950 font-black text-sm">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 text-slate-950 font-black text-sm">
                   UT
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-white tracking-wide uppercase">
+                  <h3 className="text-xs sm:text-sm font-bold text-white tracking-wide uppercase">
                     {student.universityShort}
                   </h3>
-                  <p className="text-[10px] text-blue-200/80 font-medium line-clamp-1">
+                  <p className="text-xs text-blue-200/80 font-medium line-clamp-1">
                     Carteira de Identificação Estudantil (CIE)
                   </p>
                 </div>
@@ -133,10 +133,10 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
 
               {/* National Student Stamp */}
               <div className="flex flex-col items-end">
-                <span className="bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   DNE Oficial
                 </span>
-                <span className="text-[9px] text-slate-400 font-mono mt-0.5">
+                <span className="text-[11px] text-slate-400 font-mono mt-0.5">
                   Lei 12.933/13
                 </span>
               </div>
@@ -156,56 +156,56 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
                     />
                     {/* Official holographic watermark badge */}
                     <div className="absolute bottom-1 right-1 bg-blue-600/90 text-white rounded p-0.5 shadow">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-300" />
+                      <ShieldCheck className="w-4 h-4 text-emerald-300" />
                     </div>
                   </div>
-                  <div className="text-center mt-1">
-                    <span className="text-[9px] font-mono text-slate-400 block">
+                  <div className="text-center mt-1.5">
+                    <span className="text-[11px] font-mono text-slate-400 block">
                       Validade
                     </span>
-                    <span className="text-[11px] font-bold text-amber-400 font-mono">
+                    <span className="text-xs sm:text-sm font-bold text-amber-400 font-mono">
                       {student.card.validUntil}
                     </span>
                   </div>
                 </div>
 
                 {/* Info Fields */}
-                <div className="flex-1 min-w-0 space-y-1.5">
+                <div className="flex-1 min-w-0 space-y-2">
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">
+                    <span className="text-xs text-slate-400 uppercase tracking-wider block font-semibold">
                       Nome do Estudante
                     </span>
-                    <h2 className="text-sm font-bold text-white tracking-tight leading-snug break-words">
+                    <h2 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug break-words">
                       {student.name}
                     </h2>
                   </div>
 
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">
+                    <span className="text-xs text-slate-400 uppercase tracking-wider block font-semibold">
                       Curso
                     </span>
-                    <p className="text-xs font-semibold text-cyan-300 leading-snug">
+                    <p className="text-sm font-bold text-cyan-300 leading-snug">
                       {student.course.name}
                     </p>
-                    <p className="text-[10px] text-slate-300">
+                    <p className="text-xs text-slate-300">
                       {student.course.degree} • {student.course.currentSemester}º Semestre ({student.course.shift.split(' ')[0]})
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 pt-0.5">
                     <div>
-                      <span className="text-[9px] text-slate-400 uppercase block font-semibold">
+                      <span className="text-[11px] text-slate-400 uppercase block font-semibold">
                         Matrícula / RA
                       </span>
-                      <span className="text-xs font-mono font-bold text-white">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-white">
                         {student.ra}
                       </span>
                     </div>
                     <div>
-                      <span className="text-[9px] text-slate-400 uppercase block font-semibold">
+                      <span className="text-[11px] text-slate-400 uppercase block font-semibold">
                         Nascimento
                       </span>
-                      <span className="text-xs font-mono text-slate-200">
+                      <span className="text-xs sm:text-sm font-mono text-slate-200">
                         {student.birthDate}
                       </span>
                     </div>
@@ -214,39 +214,39 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
               </div>
 
               {/* Institution & CPF Row */}
-              <div className="bg-slate-900/80 border border-white/5 rounded-xl p-2.5 grid grid-cols-2 gap-2 text-[11px]">
+              <div className="bg-slate-900/80 border border-white/5 rounded-xl p-3 grid grid-cols-2 gap-2 text-xs">
                 <div>
-                  <span className="text-[9px] text-slate-400 block font-medium">Instituição</span>
-                  <span className="font-semibold text-slate-200 text-[10px] leading-tight block truncate">
+                  <span className="text-[11px] text-slate-400 block font-medium">Instituição</span>
+                  <span className="font-semibold text-slate-200 text-xs leading-tight block truncate">
                     {student.university}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[9px] text-slate-400 block font-medium">Doc. / CPF</span>
-                  <span className="font-mono text-slate-200 text-[10px] font-semibold block">
+                  <span className="text-[11px] text-slate-400 block font-medium">Doc. / CPF</span>
+                  <span className="font-mono text-slate-200 text-xs font-semibold block">
                     {student.cpf}
                   </span>
                 </div>
               </div>
 
               {/* Dynamic Anti-Fraud Live Bar */}
-              <div className="bg-emerald-950/60 border border-emerald-500/30 rounded-xl px-3 py-1.5 flex items-center justify-between text-[10px]">
+              <div className="bg-emerald-950/60 border border-emerald-500/30 rounded-xl px-3.5 py-2 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1.5">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-emerald-300 font-medium">Autenticação Dinâmica:</span>
                 </div>
-                <span className="font-mono font-bold text-emerald-400 text-[10px]">
+                <span className="font-mono font-bold text-emerald-400 text-xs">
                   {liveTime.split('às')[1] || liveTime}
                 </span>
               </div>
             </div>
 
             {/* Card Footer Barcode & DNE Code */}
-            <div className="bg-slate-950/90 border-t border-white/10 px-4 py-2 flex items-center justify-between text-[10px] text-slate-400">
-              <span className="font-mono text-[9px] text-slate-400 truncate max-w-[200px]">
+            <div className="bg-slate-950/90 border-t border-white/10 px-4 py-2 flex items-center justify-between text-xs text-slate-400">
+              <span className="font-mono text-[11px] text-slate-400 truncate max-w-[220px]">
                 {student.card.codeDNE}
               </span>
-              <span className="text-amber-400 font-semibold text-[9px]">
+              <span className="text-amber-400 font-semibold text-xs">
                 ICP-BRASIL
               </span>
             </div>
@@ -260,14 +260,14 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
             }}
           >
             {/* Header */}
-            <div className="bg-indigo-950 p-3 border-b border-white/10 flex items-center justify-between">
+            <div className="bg-indigo-950 p-3.5 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span className="text-xs font-bold text-white uppercase tracking-wider">
+                <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                   Validação Digital & QR Code
                 </span>
               </div>
-              <span className="text-[9px] text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded">
+              <span className="text-[11px] text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded">
                 DNE - Padrão Nacional
               </span>
             </div>
@@ -276,7 +276,7 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
               {/* QR Code */}
               <div className="flex flex-col items-center">
                 <QRCodeSvg value={student.card.qrPayload} size={130} />
-                <span className="text-[10px] text-slate-400 mt-1 font-mono">
+                <span className="text-xs text-slate-400 mt-1 font-mono">
                   Aproxime para leitura na portaria / eventos
                 </span>
               </div>
@@ -287,16 +287,16 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
               </div>
 
               {/* Legal info & certificate */}
-              <div className="w-full bg-slate-900/90 border border-white/5 rounded-lg p-2 text-left text-[9px] text-slate-400 space-y-0.5">
-                <p className="text-slate-300 font-semibold truncate">
+              <div className="w-full bg-slate-900/90 border border-white/5 rounded-lg p-2.5 text-left text-[11px] text-slate-300 space-y-0.5 leading-relaxed">
+                <p className="text-slate-200 font-semibold truncate">
                   {student.card.entidadeEmissora}
                 </p>
-                <p>Certificado Digital: <span className="font-mono text-slate-200">{student.card.certNumber}</span></p>
-                <p>Validade nacional assegurada para meia-entrada em cinemas, teatros, shows e eventos esportivos.</p>
+                <p>Certificado Digital: <span className="font-mono text-amber-300 font-semibold">{student.card.certNumber}</span></p>
+                <p>Validade nacional assegurada para meia-entrada em eventos.</p>
               </div>
             </div>
 
-            <div className="bg-slate-950 p-2.5 border-t border-white/10 text-center text-[10px] text-slate-400">
+            <div className="bg-slate-950 p-2.5 border-t border-white/10 text-center text-xs text-slate-400">
               Toque no botão <span className="text-blue-400 font-bold">Girar</span> para voltar à frente
             </div>
           </div>
@@ -308,7 +308,7 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
         <button
           type="button"
           onClick={() => setIsFlipped(!isFlipped)}
-          className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
+          className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
         >
           <RotateCw className="w-4 h-4 mb-1 text-blue-600" />
           <span>{isFlipped ? 'Frente' : 'Verso QR'}</span>
@@ -317,7 +317,7 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
         <button
           type="button"
           onClick={handleCopyCode}
-          className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
+          className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
         >
           {copied ? (
             <>
@@ -335,7 +335,7 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
         <button
           type="button"
           onClick={() => setIsFullscreen(!isFullscreen)}
-          className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
+          className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-100 hover:bg-slate-50 text-slate-800 transition-all text-xs font-semibold shadow-xs cursor-pointer"
         >
           <Maximize2 className="w-4 h-4 mb-1 text-amber-600" />
           <span>Expandir</span>
@@ -343,29 +343,29 @@ export const CarteirinhaDigital: React.FC<CarteirinhaDigitalProps> = ({
       </div>
 
       {/* Student Details Card */}
-      <div className="w-full bg-white border border-slate-100 rounded-xl p-3.5 mt-3 space-y-2 text-xs shadow-xs">
-        <div className="flex items-center justify-between text-slate-800 font-bold pb-1.5 border-b border-slate-100">
-          <span className="flex items-center gap-1.5">
+      <div className="w-full bg-white border border-slate-100 rounded-xl p-4 mt-3.5 space-y-2.5 shadow-xs">
+        <div className="flex items-center justify-between text-slate-800 font-bold pb-2 border-b border-slate-100">
+          <span className="flex items-center gap-1.5 text-xs sm:text-sm">
             <IdCard className="w-4 h-4 text-blue-600" />
             Dados da Certificação
           </span>
-          <span className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full font-mono font-bold">
+          <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full font-mono font-bold">
             {student.card.status}
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-700 pt-1">
+        <div className="grid grid-cols-2 gap-2 text-xs text-slate-700 pt-1">
           <div>
-            <span className="text-[10px] text-slate-500 block">Código de Uso</span>
-            <span className="font-mono text-slate-900 text-[10px] font-medium">{student.card.codeDNE}</span>
+            <span className="text-xs text-slate-500 block font-medium">Código de Uso</span>
+            <span className="font-mono text-slate-900 text-xs font-semibold">{student.card.codeDNE}</span>
           </div>
           <div>
-            <span className="text-[10px] text-slate-500 block">Emissão</span>
-            <span className="font-mono text-slate-900 font-medium">{student.card.issueDate}</span>
+            <span className="text-xs text-slate-500 block font-medium">Emissão</span>
+            <span className="font-mono text-slate-900 text-xs font-semibold">{student.card.issueDate}</span>
           </div>
           <div className="col-span-2">
-            <span className="text-[10px] text-slate-500 block">Documento de Identidade</span>
-            <span className="font-mono text-slate-900 font-medium">{student.card.nationalIdDoc}</span>
+            <span className="text-xs text-slate-500 block font-medium">Documento de Identidade</span>
+            <span className="font-mono text-slate-900 text-xs font-semibold">{student.card.nationalIdDoc}</span>
           </div>
         </div>
       </div>

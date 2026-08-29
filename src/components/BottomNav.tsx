@@ -59,7 +59,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) 
                 }`}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <span className={`text-[10px] font-bold mt-1 tracking-tight ${
+                <span className={`text-xs font-bold mt-1 tracking-tight ${
                   isActive ? 'text-blue-600' : 'text-slate-600'
                 }`}>
                   {tab.label}
@@ -76,11 +76,11 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) 
               className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
                 isActive
                   ? 'text-blue-600 font-bold'
-                  : 'text-slate-400 hover:text-slate-700'
+                  : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Icon className={`w-5 h-5 mb-0.5 transition-transform ${isActive ? 'scale-110' : ''}`} />
-              <span className="text-[10px]">{tab.label}</span>
+              <span className={`text-xs ${isActive ? 'font-bold' : 'font-medium'}`}>{tab.label}</span>
             </button>
           );
         })}

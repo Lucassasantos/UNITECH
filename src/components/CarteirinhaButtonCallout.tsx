@@ -43,20 +43,20 @@ export const CarteirinhaButtonCallout: React.FC<CarteirinhaButtonCalloutProps> =
 
           {/* Texts */}
           <div>
-            <div className="flex items-center gap-1.5 mb-1">
-              <span className="text-[10px] font-bold text-amber-300 bg-amber-400/15 border border-amber-400/30 px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs font-bold text-amber-300 bg-amber-400/15 border border-amber-400/30 px-2 py-0.5 rounded-full uppercase tracking-wider">
                 Documento Oficial
               </span>
-              <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 Válida 2026/27
               </span>
             </div>
-            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-1.5">
+            <h3 className="text-base sm:text-lg font-bold text-white tracking-tight flex items-center gap-1.5">
               Mostrar Carteirinha de Estudante
               <Sparkles className="w-4 h-4 text-amber-400" />
             </h3>
-            <p className="text-[11px] text-slate-300 font-normal line-clamp-1">
+            <p className="text-xs text-slate-300 font-normal line-clamp-1 mt-0.5">
               Toque para abrir QR Code, código de barras e validação
             </p>
           </div>
@@ -64,18 +64,18 @@ export const CarteirinhaButtonCallout: React.FC<CarteirinhaButtonCalloutProps> =
 
         {/* Right Arrow Action */}
         <div className="shrink-0">
-          <div className="w-9 h-9 rounded-xl bg-blue-600 group-hover:bg-blue-500 text-white flex items-center justify-center shadow-md shadow-blue-600/30 group-hover:translate-x-0.5 transition-all">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 group-hover:bg-blue-500 text-white flex items-center justify-center shadow-md shadow-blue-600/30 group-hover:translate-x-0.5 transition-all">
             <ChevronRight className="w-5 h-5" />
           </div>
         </div>
       </div>
 
       {/* Mini preview bar */}
-      <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
+      <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-xs text-slate-300 font-mono">
         <span>RA: <strong className="text-white">{student.ra}</strong></span>
         <span>DNE: <strong className="text-amber-300">{student.card.codeDNE.slice(0, 15)}...</strong></span>
         <span className="text-blue-300 font-sans font-semibold flex items-center gap-1">
-          <QrCode className="w-3 h-3" />
+          <QrCode className="w-3.5 h-3.5" />
           Com QR Code
         </span>
       </div>

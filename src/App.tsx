@@ -230,7 +230,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="space-y-4 max-w-sm mx-auto"
+              className="space-y-4 max-w-lg mx-auto"
             >
               {/* Welcome Banner */}
               <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-xs flex items-center justify-between">
