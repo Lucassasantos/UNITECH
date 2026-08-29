@@ -217,7 +217,7 @@ export default function App() {
       )}
 
       {/* Main Tab Views */}
-      <main className="flex-1 px-4 py-4 space-y-4">
+      <main className="flex-1 px-4 pt-4 pb-24 space-y-4">
         <AnimatePresence mode="wait">
           {/* ================= TAB: HOME / INÍCIO ================= */}
           {activeTab === 'home' && (
