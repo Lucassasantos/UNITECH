@@ -1,0 +1,7 @@
+{
+  "name": "Portal do Aluno & Carteirinha Digital",
+  "description": "Aplicativo universitário com login do estudante, visão do curso e carteirinha digital de estudante com validação QR Code e código de barras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

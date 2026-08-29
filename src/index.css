@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Live In-Place App Editing Mode Styles */
+.app-edit-mode-active [contenteditable="true"],
+.app-edit-mode-active p,
+.app-edit-mode-active span:not(.lucide),
+.app-edit-mode-active h1,
+.app-edit-mode-active h2,
+.app-edit-mode-active h3,
+.app-edit-mode-active h4,
+.app-edit-mode-active h5,
+.app-edit-mode-active label {
+  transition: outline 0.15s ease, background-color 0.15s ease;
+}
+
+.app-edit-mode-active [contenteditable="true"]:hover,
+.app-edit-mode-active p:hover,
+.app-edit-mode-active h1:hover,
+.app-edit-mode-active h2:hover,
+.app-edit-mode-active h3:hover,
+.app-edit-mode-active h4:hover {
+  outline: 1px dashed rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+  cursor: text !important;
+}
+
+.app-edit-mode-active [contenteditable="true"]:focus,
+.app-edit-mode-active p:focus,
+.app-edit-mode-active h1:focus,
+.app-edit-mode-active h2:focus,
+.app-edit-mode-active h3:focus,
+.app-edit-mode-active h4:focus {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 1px;
+  background-color: rgba(37, 99, 235, 0.05) !important;
+  border-radius: 4px;
+}
