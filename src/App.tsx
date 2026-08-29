@@ -33,7 +33,7 @@ import { ScheduleView } from './components/ScheduleView';
 import { ProfileView } from './components/ProfileView';
 import { StudentFormModal } from './components/StudentFormModal';
 
-const STORAGE_KEY = 'carteirinha_app_students_v1';
+const STORAGE_KEY = 'carteirinha_app_students_v2';
 
 export default function App() {
   // Load persisted students or fallback to MOCK_STUDENTS
@@ -43,7 +43,10 @@ export default function App() {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          // Merge any new mock students not present in stored array
+          const existingIds = new Set(parsed.map((s: Student) => s.id));
+          const missingMocks = MOCK_STUDENTS.filter(m => !existingIds.has(m.id));
+          return [...parsed, ...missingMocks];
         }
       }
     } catch {
